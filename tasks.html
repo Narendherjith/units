@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Units</title>
+    <style>
+       .box-px{
+        width: 200px;
+        height:100px;
+        background-color: rgb(197, 197, 54);
+       }
+       .parent-percent{
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+       }
+       .child-percent{
+        width: 50%;
+        background-color: burlywood;
+       }
+       .rem-paragraph{
+        font-size: 2rem;
+       }
+       .parent-em{
+        font-size: 16px;
+       }
+       .child-em{
+        font-size: 1.5em;
+       }
+       .box-vw{
+        width: 50vw;
+        background-color: aqua;
+       }
+       .box-vh{
+        width: 25vh;
+        background-color: lightpink;
+       }
+       .square-vmin{
+        width: 20vmin;
+        height: 20vmin;
+        background-color: lightseagreen;
+       }
+       .square-vmax{
+        width: 20vmax;
+        height: 20vmax;
+        background-color: lightgrey;
+       }
+       .parent-relative{
+        position: relative;
+        width: 280px;
+        height: 280px;
+        background-color: skyblue;
+       }
+       .child-absolute{
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        right: 0;
+        bottom: 0;
+        background-color: wheat;
+       }
+       .parent-font{
+        font-size: 20px;
+        background-color: lightseagreen;
+       }
+       .child-font{
+        font-size: inherit;
+        background-color: mediumpurple;
+       }
+      
+    </style>
+</head>
+<body>
+    <h2>1. px: Set the width and height of a box in pixels.</h2>
+    <p>Create a box with a width of 200px and height of 100px. How does it scale when the viewport size changes? </p>
+
+<div class="box-px">Box with px units</div>
+<h4>Same given values will be displayed because in px width and height is fixed</h4>
+
+<h2>2. %: Set the width of a box as a percentage of its parent.</h2>
+<p> Create a container and a child box. Set the child box’s width to 50% of the parent container. How does it behave when the container’s size changes?</p>
+
+<div class="parent-percent">
+    <div class="child-percent">Box with % units</div>
+</div>
+<h4>It will take the 50% value of the container's width value</h4>
+
+<h2>3. rem: Set the font size relative to the root element.</h2>
+<p>Create a paragraph with font size set to 2rem. How does changing the root font size affect the paragraph?</p>
+<p class="rem-paragraph">This paragraph uses rem units.</p>
+<h4>Normally the root element (html) font size is 16px but we are applying 2rem so it will change to 32px </h4>
+
+<h2>4. em: Set the font size relative to its parent element.</h2>
+<p> Create a container with a font size of 16px, and a child element with font size 1.5em. How does the child element’s font size depend on its parent?</p>
+<div class="parent-em">
+    <p class="child-em">This paragraph uses em units.</p>
+</div>
+<h4>The parent font size is 16px and 1em is equal to the font size of the parent element.
+    Therefore, the child’s font size will be 1.5 times the font size of its parent. i.e 16*1.5 =24px </h4>
+
+  <h2>  5. vw: Set the width of a box relative to the viewport width. </h2>
+<p> Create a box with a width of 50vw. What happens if you resize the browser window?</p>
+<div class="box-vw">Box with vw units</div>
+<h4>As the viewport width increases or decreases, the width of the .box-vw will also increase or decrease respectively, always maintaining 50% of the viewport width.
+   <br> For example:
+   <br>
+    If the viewport width is 1000px, the box will be 500px wide.
+    If the viewport width is resized to 800px, the box will shrink to 400px wide.
+    This behavior is ideal for responsive design, as the box adapts to different screen sizes without the need for media queries.</h4>
+
+   <h2> 6. vh: Set the height of a box relative to the viewport height.</h2>
+<p> Create a box with a height of 25vh. How does the box’s height change when resizing the viewport vertically?</p>
+
+<div class="box-vh">Box with vh units</div>
+<h4>As the height of the viewport increases or decreases, the height of the .box-vh will adjust dynamically, always maintaining 25% of the viewport's height.
+<br>For example: <br>
+If the viewport height is 800px, the box will be 200px tall (25% of 800px). <br>
+If the viewport height is resized to 600px, the box will shrink to 150px tall (25% of 600px). </h4>
+
+<h2>7. vmin: Set a square’s size using the smaller dimension of the viewport. </h2>
+<p> Create a square div with width and height set to 20vmin. What happens if you change the browser’s orientation?</p>
+
+<div class="square-vmin">Square with vmin units</div>
+<h4>If the viewport's width is 1000px and the height is 800px, the smaller dimension is the height (800px), so the square will have a width and height of 160px (20% of 800px). <br>
+    If the viewport's width is 800px and the height is 1000px, the smaller dimension is the width (800px), so the square will have a width and height of 160px (20% of 800px). </h4>
+
+ <h2>   8. vmax: Set a square’s size using the larger dimension of the viewport.</h2>
+<p>Create a square div with width and height set to 20vmax. How does it compare to vmin when the viewport changes?</p>
+
+<div class="square-vmax">Square with vmax units</div>
+<h4>If the viewport's width is 1000px and the height is 800px, the larger dimension is the width (1000px), so the square will have a width and height of 200px (20% of 1000px). <br>
+    If the viewport's width is 800px and the height is 1000px, the larger dimension is the height (1000px), so the square will have a width and height of 200px (20% of 1000px).</h4>
+    <h2>vmax makes the square's size based on the larger dimension of the viewport (either width or height).
+       <br>vmin makes the square's size based on the smaller dimension of the viewport.</h2>
+
+    <h2> 9. Parent-Child Relationship (Box with Relative and Absolute Positioning)</h2>
+<p> Create a parent box with position: relative and a child box with position: absolute. Place the child box at the bottom-right corner of the parent. How does the relative positioning of the parent affect the child?</p>
+
+<div class="parent-relative">
+    <div class="child-absolute">Child Box</div>
+</div>
+
+<h2> 10. Parent-Child Relationship (Font Size Inheritance) </h2>
+<p> Create a parent div with a font size of 20px and a child div with font-size: inherit. How does the child’s font size behave if you change the parent’s font size? </p>
+
+<div class="parent-font">
+    Parent Text
+    <div class="child-font">Child Text (Inherits Font Size)</div>
+</div>
+<h4>If you change the parent's font size, the child's font size will also change accordingly, since it inherits the font size from the parent.
+    <br>The child does not have a fixed font size of its own; instead, it relies on the parent’s font size.</h4>
+
+
+
+
+
+
+
+</body>
+</html>
