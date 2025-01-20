@@ -21,12 +21,15 @@
        }
        .rem-paragraph{
         font-size: 2rem;
+        background-color: plum;
        }
        .parent-em{
         font-size: 16px;
+        background-color: maroon;
        }
        .child-em{
         font-size: 1.5em;
+        background-color:burlywood;
        }
        .box-vw{
         width: 50vw;
@@ -88,11 +91,13 @@
 
 <h2>3. rem: Set the font size relative to the root element.</h2>
 <p>Create a paragraph with font size set to 2rem. How does changing the root font size affect the paragraph?</p>
+
 <p class="rem-paragraph">This paragraph uses rem units.</p>
 <h4>Normally the root element (html) font size is 16px but we are applying 2rem so it will change to 32px </h4>
 
 <h2>4. em: Set the font size relative to its parent element.</h2>
 <p> Create a container with a font size of 16px, and a child element with font size 1.5em. How does the child element’s font size depend on its parent?</p>
+
 <div class="parent-em">
     <p class="child-em">This paragraph uses em units.</p>
 </div>
@@ -101,6 +106,7 @@
 
   <h2>  5. vw: Set the width of a box relative to the viewport width. </h2>
 <p> Create a box with a width of 50vw. What happens if you resize the browser window?</p>
+
 <div class="box-vw">Box with vw units</div>
 <h4>As the viewport width increases or decreases, the width of the .box-vw will also increase or decrease respectively, always maintaining 50% of the viewport width.
    <br> For example:
